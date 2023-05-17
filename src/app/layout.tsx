@@ -16,16 +16,12 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return (
-    <html lang='en'>
-      <body className={`${roboto.className} bg-slate-200`}>
-        <main>{children}</main>
-      </body>
-    </html>
-  );
-}
+const RootLayout = ({ children }: { children: React.ReactNode }) => (
+  <html lang='en'>
+    <body className={`${roboto.className} bg-slate-200`}>
+      <main>{children}</main>
+    </body>
+  </html>
+);
+
+export default RootLayout;
