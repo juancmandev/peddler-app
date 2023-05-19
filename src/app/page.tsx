@@ -6,7 +6,8 @@ export default function Home() {
     <div className='w-screen h-screen grid place-items-center'>
       <div>
         <H1 className='text-cyan-500'>Peddler App</H1>
-        <NextLink href='/map'>About</NextLink>
+        <NextLink href='/map'>Map</NextLink>
+        <NextLink href='/login'>Login</NextLink>
       </div>
     </div>
   );

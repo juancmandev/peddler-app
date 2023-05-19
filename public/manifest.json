@@ -1,7 +1,7 @@
 {
-  "name": "Next PWA",
-  "short_name": "Next PWA",
-  "description": "Next PWA example using next-pwa",
+  "name": "Peddler App",
+  "short_name": "Peddler App",
+  "description": "Don't miss the ice cream man!",
   "theme_color": "#ffffff",
   "background_color": "#ffffff",
   "display": "fullscreen",

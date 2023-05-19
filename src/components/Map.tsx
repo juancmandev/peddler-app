@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { GoogleMap } from '@react-google-maps/api';
+import { GoogleMap, Marker } from '@react-google-maps/api';
 
 interface coords {
   lat: number;
@@ -10,23 +10,20 @@ interface coords {
 
 const radius = 500;
 
-const Map = () => {
+export default function Map() {
   const [map, setMap] = useState<any>(null);
   const [zoom, setZoom] = useState(19);
   const [markerLocation, setMarkerLocation] = useState<coords | null>(null);
 
   useEffect(() => {
     if ('geolocation' in navigator) {
-      navigator.geolocation.getCurrentPosition(({ coords }) => {
+      navigator.geolocation.watchPosition(({ coords }) => {
         const { latitude, longitude } = coords;
 
         setMarkerLocation({ lat: latitude, lng: longitude });
       });
     }
   }, []);
-
-  const handleCursorMarkerLocation = (e: any) =>
-    setMarkerLocation({ lat: e.latLng.lat(), lng: e.latLng.lng() });
 
   return (
     <div className='w-full h-[80vh]'>
@@ -40,15 +37,19 @@ const Map = () => {
           }}
           onLoad={(map) => setMap(map)}
           mapContainerClassName='w-full h-full'
-          onClick={handleCursorMarkerLocation}
           center={markerLocation}
           zoom={zoom}
           onZoomChanged={() => {
             map?.getZoom() && setZoom(map.getZoom());
-          }}></GoogleMap>
+          }}>
+          <Marker
+            position={{
+              lat: markerLocation.lat,
+              lng: markerLocation.lng,
+            }}
+          />
+        </GoogleMap>
       )}
     </div>
   );
-};
-
-export default Map;
+}
