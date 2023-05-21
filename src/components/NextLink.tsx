@@ -8,7 +8,7 @@ interface NextLinkProps {
 
 const NextLink = ({ href, children, className }: NextLinkProps) => (
   <Link
-    className={`font-medium text-lg hover:underline px-2 py-1 ${className}`}
+    className={`font-medium text-lg hover:underline ${className}`}
     href={href}>
     {children}
   </Link>

@@ -6,7 +6,7 @@ interface FormProps {
 export const Form = ({ children, onSubmit }: FormProps) => (
   <form
     onSubmit={onSubmit}
-    className='max-w-[340px] px-4 py-6 my-4 mx-auto flex flex-col gap-4'>
+    className='max-w-[300px] my-4 mx-auto flex flex-col gap-2'>
     {children}
   </form>
 );

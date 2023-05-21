@@ -8,8 +8,6 @@ interface coords {
   lng: number;
 }
 
-const radius = 500;
-
 export default function Map() {
   const [map, setMap] = useState<any>(null);
   const [zoom, setZoom] = useState(19);

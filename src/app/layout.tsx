@@ -1,5 +1,5 @@
-import '@/styles/globals.css';
 import { Roboto } from 'next/font/google';
+import '@/styles/globals.css';
 
 const roboto = Roboto({
   weight: ['100', '300', '400', '500', '700', '900'],
@@ -16,12 +16,16 @@ export const metadata = {
   },
 };
 
-const RootLayout = ({ children }: { children: React.ReactNode }) => (
-  <html lang='en'>
-    <body className={roboto.className}>
-      <main>{children}</main>
-    </body>
-  </html>
-);
-
-export default RootLayout;
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang='en'>
+      <body className={roboto.className}>
+        <main>{children}</main>
+      </body>
+    </html>
+  );
+}
