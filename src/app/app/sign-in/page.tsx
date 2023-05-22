@@ -130,7 +130,7 @@ export default function SignIn() {
             />
           </FormSection>
           <PrimaryButton type='submit'>Sign In</PrimaryButton>
-          <NextLink className='text-sm' href='/login'>
+          <NextLink className='text-sm' href='/app/login'>
             Do you have already an account? Login
           </NextLink>
         </Form>

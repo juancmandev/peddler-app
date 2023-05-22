@@ -5,6 +5,7 @@ import { useSupabase } from '@/providers/supabaseProvider';
 import { useRouter } from 'next/navigation';
 import Map from '@/components/Map';
 import { PrimaryButton } from '@/components/Buttons';
+import LoadingSpinner from '@/components/LoadingSpinner';
 
 const GOOGLE_MAPS_API_KEY = process.env.GOOGLE_MAPS_API_KEY as string;
 
@@ -30,7 +31,7 @@ export default function MapPage() {
     router.push('/app/login');
   };
 
-  if (!isLoaded) return <p>Loading...</p>;
+  if (!isLoaded) return <LoadingSpinner />;
 
   return (
     <>

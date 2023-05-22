@@ -107,7 +107,7 @@ export default function Login() {
           <PrimaryButton disabled={loading} type='submit'>
             {loading ? 'Logging in...' : 'Login'}
           </PrimaryButton>
-          <NextLink className='text-sm' href='/sign-in'>
+          <NextLink className='text-sm' href='/app/sign-in'>
             Create an account instead
           </NextLink>
         </Form>
